@@ -40,7 +40,7 @@ const Login = () => {
       
         dispatch(setUser(response.data.user));
         localStorage.setItem("user",JSON.stringify(response.data.user))
-        // window.location.reload()
+        window.location.reload()
         navigate('/')
         setFormData({email:'',password:''})
         
