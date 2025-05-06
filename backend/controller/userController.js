@@ -38,7 +38,7 @@ const login = async (req, res) => {
             return res.status(403).json({ success: false, message: "invalid credentials" })
         }
         const token = jwt.sign({ id: user._id }, "SAIKIRAN", { expiresIn: "1d" });
-        return res.cookie("token", token, { httpOnly: true, sameSite: "None", secure: "true" }).status(201).json({ success: true, message: "user login successfully", token, user })
+        return res.cookie("token", token, { httpOnly: true, sameSite: "None", secure: true }).status(201).json({ success: true, message: "user login successfully", token, user })
 
 
     } catch (err) {
