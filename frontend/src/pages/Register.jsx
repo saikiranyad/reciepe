@@ -26,7 +26,7 @@ const Register = () => {
                 headers:{'Content-Type':'multipart/form-data'},
                 withCredentials:true
             })
-            console.log(response.data);
+            
             setFormdata({name:'',email:'',password:''})
             navigate('/login')
 

@@ -251,8 +251,7 @@ const Meandfollower = () => {
           withCredentials: true,
         });
 
-        // console.log(recipesRes.data)
-        // console.log(savedRes.data)
+        
         const savedRecipeIds = savedRes.data.savedrecipes.map((r) => r._id);
 
         // Annotate recipes with isSaved flag

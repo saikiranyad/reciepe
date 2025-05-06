@@ -14,7 +14,7 @@ const Myreciepes = () => {
   const [savedRecipes, setSavedRecipes] = useState([]);
 
   const handleView = (recipeId) => {
-    console.log("View recipe with ID:", recipeId);
+    
     navigate(`/reciepe/${recipeId}`);
   };
 
@@ -76,7 +76,7 @@ const Myreciepes = () => {
       );
       if (response.data.success === true) {
         fetchSaved();
-        console.log(response.data);
+        
       }
     } catch (err) {
       console.log("Error saving/unsaving", err);

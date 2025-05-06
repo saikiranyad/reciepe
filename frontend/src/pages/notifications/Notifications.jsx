@@ -85,7 +85,7 @@ function Notifications() {
           withCredentials: true,
         });
         setNotifications(res.data.notifications);
-        console.log(res.data.notifications);
+        
       } catch (err) {
         console.error("Error fetching notifications", err);
       }

@@ -266,7 +266,7 @@ function Usersavedreciepe() {
 
         if (res.data.success === true) {
           setSavedRecipes(res.data.savedrecipes || []);
-          console.log(res.data);
+          
         } else {
           setSavedRecipes([]);
         }

@@ -235,7 +235,7 @@ const getrecipesbyid = async (req, res) => {
   const howmanymemberssavedrecipes = async (req, res) => {
     try {
         const recipeId = req.params.id;
-        console.log(recipeId, 126);
+       
 
         if (!recipeId) {
             return res.status(400).json({ success: false, message: "Recipe ID is required" });
@@ -300,7 +300,7 @@ const commentonrecipe = async (req, res) => {
     try {
         const reciepeid = req.params.id
         const {commenttext} = req.body
-        console.log(req.body)
+      
         const userId = req.user.id
         const reciepe = await Reciepe.findById(reciepeid);
         if(!reciepe){
@@ -312,7 +312,7 @@ const commentonrecipe = async (req, res) => {
             createdAt:Date.now()
         }
          reciepe.comments.push(comments)
-         console.log(reciepe.comments)
+         
          await reciepe.save();
 
          if(reciepe.userId.toString()!==userId){
@@ -354,7 +354,7 @@ const commentreply  = async(req,res)=>{
             await sendnotification(comment.userId,userId,"reply",reciepeId)
         }
         return res.status(201).json({success:true,message:"you got reply",comment})
-        console.log(comment)
+       
     }
    
     catch(err){
@@ -369,7 +369,7 @@ const replytoreply = async(req,res)=>{
         const userId = req.user.id;
 
         const {commentId,replyId,replytext} = req.body
-        console.log(req.body)
+       
         const reciepe = await Reciepe.findById(reciepeId);
         if(!reciepe){
             return res.status(404).json({success:false,message:"reciepe not found"})
@@ -473,7 +473,7 @@ const removecollaborators = async (req, res) => {
         }
 
         const isCollaborator = reciepe.collabortors.some(id => id.toString() === collaboratorId);
-        console.log(isCollaborator)
+   
 
         if (!isCollaborator) {
             return res.status(400).json({ success: false, message: "Collaborator not found in this recipe" });

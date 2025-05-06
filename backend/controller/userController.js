@@ -7,7 +7,7 @@ const { uploadtocloudinary } = require("../helpers/uploadCloudinary");
 const register = async (req, res) => {
     try {
         const { name, email, password } = req.body;
-        console.log(req.body)
+       
         const user = await User.findOne({ email });
         if (user) {
             return res.status(400).json({ success: false, message: "user already exists" })
@@ -59,9 +59,9 @@ const logout = async (req, res) => {
 const getuser = async (req, res) => {
     try {
         const userId = req.user.id;
-        console.log(userId);
+        
         const havinguser = await User.findById(userId);
-        console.log(havinguser)
+       
         return res.status(201).json({ success: true, message: "user is there", havinguser })
 
     } catch (err) {
@@ -72,7 +72,7 @@ const getuser = async (req, res) => {
 const getuserdata = async (req, res) => {
     try {
         const userId = req.user.id;
-        console.log(userId, "from getuserdata")
+        
         const user = await User.findById(userId)
             .populate('followers', 'name avatar')
             .populate('following', 'name avatar')
@@ -129,7 +129,7 @@ const savedrecipe = async (req, res) => {
     try {
         const userId = req.user.id;
         const recipeId = req.body.recipeId || req.body.savedReciepes;
-        console.log(req.body)
+        
 
         if (!recipeId) {
             return res.status(403).json({ success: false, message: "Recipe ID is required" });
@@ -141,7 +141,7 @@ const savedrecipe = async (req, res) => {
         }
 
         const alreadyHasRecipe = user.savedReciepes.some(id => id.toString() === recipeId);
-        console.log(alreadyHasRecipe)
+        
         if (alreadyHasRecipe) {
             await User.findByIdAndUpdate(userId, { $pull: { savedReciepes: recipeId } }, { new: true });
             return res.status(201).json({ success: true, message: "Recipe unsaved", recipeId });
@@ -170,7 +170,7 @@ const fetchusersavedreciepes = async (req, res) => {
             select: "name avatar",
           },
         });
-        console.log(user,173)
+        
   
       if (!user || user.savedReciepes.length === 0) {
         return res.status(404).json({
@@ -202,7 +202,7 @@ const followingandunfollowingusers = async (req, res) => {
     try {
         const userId = req.user.id
         const { targetuserid } = req.body
-        console.log(req.body)
+        
         if (userId === targetuserid) {
             return res.status(409).json({ success: false, message: "you cant follow yourself" })
         }
@@ -212,7 +212,7 @@ const followingandunfollowingusers = async (req, res) => {
             return res.status(403).json({ success: false, message: "user does'nt exists" })
         }
         const isFollowing = user.following.some(id => id.toString() === targetuserid)
-        console.log(isFollowing)
+        
         if (isFollowing) {
             await User.findByIdAndUpdate(userId, { $pull: { following: targetuserid } })
             await User.findByIdAndUpdate(targetuserid, { $pull: { followers: userId } })
@@ -304,7 +304,7 @@ const userwithid = async (req, res) => {
 const updateuser = async (req, res) => {
     try {
         const userId = req.user.id;
-        console.log("User ID:", userId);
+        
 
         // Prepare update object from req.body
         const updates = {

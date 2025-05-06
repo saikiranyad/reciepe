@@ -26,7 +26,7 @@ const Anotherviewreciepe = () => {
 
         if (response.data.success) {
           setRecipe(response.data.recipe);
-          console.log(response.data.recipe)
+         
         }
       } catch (err) {
         console.log(err);
