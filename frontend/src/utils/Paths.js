@@ -1,3 +1,3 @@
-export const USER_BACKEND_URL = 'http://localhost:4000/api/auth'
-export const RECIEPE_BACKEND_URL = 'http://localhost:4000/api/reciepe'
-export const NOTIFICATION_BACKEND_URL = 'http://localhost:4000/api/notification'
+export const USER_BACKEND_URL = 'https://reciepe-backend-6hdx.onrender.com/api/auth'
+export const RECIEPE_BACKEND_URL = 'https://reciepe-backend-6hdx.onrender.com/api/reciepe'
+export const NOTIFICATION_BACKEND_URL = 'https://reciepe-backend-6hdx.onrender.com/api/notification'
