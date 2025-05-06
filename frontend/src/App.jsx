@@ -50,6 +50,7 @@ function App() {
           if (response.data?.havinguser) {
             dispatch(setUser(response.data.havinguser));
             localStorage.setItem("user", JSON.stringify(response.data.havinguser));
+            console.log(response.data.havinguser)
           } else {
             dispatch(setUser(null));
           }
