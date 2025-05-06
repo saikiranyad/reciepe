@@ -12,7 +12,7 @@ const savedrouter = require('./routes/savedRoutes.js');
 
 const app = express();
 app.use(cors({
-    origin:'http://localhost:5173',
+    origin:'https://frontend-reciepe.onrender.com',
     credentials:true
 }));
 app.use(express.json());
