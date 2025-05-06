@@ -251,8 +251,8 @@ const Meandfollower = () => {
           withCredentials: true,
         });
 
-        console.log(recipesRes.data)
-        console.log(savedRes.data)
+        // console.log(recipesRes.data)
+        // console.log(savedRes.data)
         const savedRecipeIds = savedRes.data.savedrecipes.map((r) => r._id);
 
         // Annotate recipes with isSaved flag
@@ -318,7 +318,7 @@ const Meandfollower = () => {
   };
 
   return (
-    <div className="p-6 px-4">
+    <div className="p-6 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">Your Feed</h2>
 

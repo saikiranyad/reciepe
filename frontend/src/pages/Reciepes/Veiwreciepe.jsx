@@ -254,7 +254,7 @@ const ViewRecipe = () => {
   }
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-10 relative">
+    <div className="max-w-6xl mx-auto px-4 py-10 relative sm:px-6">
       {/* Saved By Dropdown */}
       <div className="absolute top-10 right-10 z-10">
         <button

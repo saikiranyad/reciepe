@@ -115,7 +115,7 @@ const Anotherviewreciepe = () => {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-10 relative">
+    <div className="max-w-7xl mx-auto px-6 sm:px-6 py-10 relative">
       {/* Saved By Dropdown Toggle & Count */}
       <div className="absolute top-6 right-6 text-right z-20">
         <button

@@ -64,7 +64,7 @@ function Updateuserdata() {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10 p-6 rounded-2xl shadow-lg bg-white">
+    <div className="max-w-md mx-auto mt-10 p-6 rounded-2xl shadow-lg bg-white sm:px-6">
       <h2 className="text-2xl font-semibold mb-6 text-center">Update Profile</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>

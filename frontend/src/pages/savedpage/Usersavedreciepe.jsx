@@ -301,7 +301,7 @@ function Usersavedreciepe() {
   };
 
   return (
-    <div className="px-4 py-8">
+    <div className="px-4 py-8 sm:px-6">
       <div className="max-w-7xl mx-auto px-6 py-10">
         <h2 className="text-4xl font-extrabold text-rose-600 mb-2">Saved Recipes</h2>
         <p className="text-gray-500 mb-8">Your personal collection of bookmarked dishes</p>

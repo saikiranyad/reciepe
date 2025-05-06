@@ -95,7 +95,7 @@ function Notifications() {
   }, []);
 
   return (
-    <div className="max-w-lg mx-auto mt-8 p-4 rounded-xl shadow-xl bg-rose-50">
+    <div className="max-w-lg mx-auto mt-8 p-10 rounded-xl shadow-xl bg-rose-50 sm:px-6">
       <h2 className="text-2xl font-bold text-rose-600 mb-4">Notifications</h2>
       {notifications.length === 0 ? (
         <p className="text-gray-500">No notifications yet.</p>

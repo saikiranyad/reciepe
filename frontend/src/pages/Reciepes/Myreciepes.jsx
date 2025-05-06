@@ -89,7 +89,7 @@ const Myreciepes = () => {
   }, []);
 
   return (
-    <div className="max-w-7xl mx-auto py-10 md:ml-10">
+    <div className="max-w-7xl mx-auto py-10 md:ml-10 sm:px-6">
       <h2 className="text-4xl font-extrabold text-rose-600 mb-2">My Recipes</h2>
       <p className="text-gray-500 mb-8">Your personal collection of shared delights</p>
       <hr className="border-rose-300 mb-6" />
