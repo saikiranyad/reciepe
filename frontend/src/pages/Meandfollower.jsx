@@ -46,6 +46,7 @@ const Meandfollower = () => {
 
         setRecipes(updatedRecipes);
         setSavedIds(savedRecipeIds);
+        cnsole.log(updatedRecipes,savedRecipeIds)
       } catch (err) {
         console.error('Failed to fetch data:', err);
       }
