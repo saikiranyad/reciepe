@@ -233,28 +233,27 @@ const followingandunfollowingusers = async (req, res) => {
 
 const onlyfollowingposts = async (req, res) => {
     try {
-        const userId = req.user.id;
-
-        const user = await User.findById(userId);
-        if (!user) {
-            return res.status(404).json({ success: false, message: "User not found" });
-        }
-
-        const followingIds = user.following;
-        // Include your own ID
-        const idsToFetchFrom = [...followingIds, userId];
-
-        const recipes = await Reciepe.find({ userId: { $in: idsToFetchFrom } })
-            .populate('userId', 'name avatar') // Optional: if you want user info with each recipe
-            .sort({ createdAt: -1 }); // Optional: newest first
-
-        return res.status(200).json({ success: true, user_recipes: recipes });
-
+      const userId = req.user.id; // Get the logged-in user ID
+  
+      const user = await User.findById(userId);
+      if (!user) {
+        return res.status(404).json({ success: false, message: "User not found" });
+      }
+  
+      const followingIds = user.following; // List of users the current user is following
+      const idsToFetchFrom = [...followingIds, userId]; // Include the logged-in user's ID
+  
+      const recipes = await Reciepe.find({ userId: { $in: idsToFetchFrom } })
+        .populate('userId', 'name avatar') // Include user info for each recipe
+        .sort({ createdAt: -1 }); // Sort by creation date, newest first
+  
+      return res.status(200).json({ success: true, user_recipes: recipes });
     } catch (err) {
-        console.log(err);
-        return res.status(500).json({ success: false, message: "Internal Server Error in only following posts" });
+      console.log(err);
+      return res.status(500).json({ success: false, message: "Internal Server Error in fetching posts" });
     }
-};
+  };
+
 
 
 
