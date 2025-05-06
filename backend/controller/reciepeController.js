@@ -90,36 +90,7 @@ const getuserreciepes = async(req,res)=>{
 
 
 
-// const updaterecipe = async (req, res) => {
-//     try {
-//         const { title, description, ingreidients,collabortors } = req.body;
-//         const receipeid = req.params.id
-//         const recipe = await Reciepe.findById(receipeid);
 
-
-//         if (recipe.userId.toString() !== req.user.id) {
-//             return res.status(409).json({ success: true, message: "user is not matched please it is unauthorized only authorized owner will allowed to update thid reciepe post" })
-//         }
-//         if (title) recipe.title = title;
-//         if (description) recipe.description = description;
-//         if (ingreidients) recipe.ingreidients = ingreidients;
-//         if (collabortors) recipe.collabortors = collabortors
-//         if (req.files && req.files.length > 0) {
-//             const image_result = [];
-//             for (const file of req.files) {
-//                 const results = await uploadtocloudinary(file.path)
-//                 image_result.push(results)
-//             }
-//             recipe.images = image_result;
-//         }
-//         await recipe.save()
-//         return res.status(201).json({ success: true, message: "recipe updated successfully", recipe })
-
-//     } catch (err) {
-//         console.log(err);
-//         res.status(500).json({ success: false, message: 'internal server error in update reciepe api' })
-//     }
-// }
 
 
 
