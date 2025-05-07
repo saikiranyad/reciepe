@@ -71,6 +71,8 @@ const Sidebar = () => {
           <Link to="/setting">
             <FaCog className="text-xl" />
           </Link>
+          <MobileNavLink to="/notification" icon={<FaBell />} label="" count={notificationCount} />
+
           <button onClick={handleLogout}>
             <FaSignOutAlt className="text-xl text-red-600" />
           </button>
@@ -128,9 +130,12 @@ const Sidebar = () => {
       {/* Mobile Bottom Nav */}
       <div className="fixed bottom-0 left-0 right-0 bg-rose-100 shadow-inner flex justify-around items-center py-2 md:hidden z-50">
         <MobileNavLink to="/" icon={<FaHome />} label="Home" />
-        <MobileNavLink to="/saved" icon={<FaHeart />} label="Saved" />
+        <MobileNavLink to="/explore" icon={<FaCompass />} label="Explore" />
+
         <MobileNavLink to="/addreciepe" icon={<FaPlusCircle />} label="Add" />
-        <MobileNavLink to="/notification" icon={<FaBell />} label="Alerts" count={notificationCount} />
+        {/* <MobileNavLink to="/notification" icon={<FaBell />} label="Alerts" count={notificationCount} /> */}
+        <MobileNavLink to="/saved" icon={<FaHeart />} label="Saved" />
+
         <MobileNavLink to="/profile" icon={<FaUserAlt />} label="Profile" />
       </div>
     </>
