@@ -6,7 +6,9 @@ const sendnotification = async(touserid,fromuserid,typeofnotification,recipeid)=
         const messages = {
             newreciepe:"posted new recipe",
             like:"like the post",
-            comment:"comment on your post"
+            comment:"comment on your post",
+            follow:"user following you",
+            
         }
         const newNotification = new Notification({
             to:touserid,

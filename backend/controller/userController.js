@@ -3,6 +3,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require("jsonwebtoken");
 const Reciepe = require("../models/Reciepemodel");
 const { uploadtocloudinary } = require("../helpers/uploadCloudinary");
+const { sendnotification } = require("../helpers/Notificationhelper");
 
 const register = async (req, res) => {
     try {
@@ -220,9 +221,12 @@ const followingandunfollowingusers = async (req, res) => {
         } else {
             await User.findByIdAndUpdate(userId, { $addToSet: { following: targetuserid } })
             await User.findByIdAndUpdate(targetuserid, { $addToSet: { followers: userId } })
+            await sendnotification(targetuserid, userId, "follow", null);
             return res.status(201).json({ success: true, message: "you following the user" })
-        }
+        } 
+       
     }
+   
 
     catch (err) {
         console.log(err);
